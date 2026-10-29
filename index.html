@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forma — Everyday Essentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">
+    Thoughtfully picked everyday essentials ✳
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#">forma<span>.</span></a>
+
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#shop">Shop</a>
+    </nav>
+
+    <button class="bag-button" id="cart-toggle">
+      Bag <span id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE EVERYDAY EDIT</p>
+        <h1>Good things.<br><em>Less noise.</em></h1>
+        <p class="hero-description">
+          A considered collection of useful things,
+          made for the way you live every day.
+        </p>
+        <a href="#shop" class="primary-button">
+          Explore the collection ↗
+        </a>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-art-circle"></div>
+        <div class="hero-art-card">
+          <span>FORMA</span>
+          <div class="hero-product-shape"></div>
+          <p>Simple by nature.<br>Better by choice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section" id="categories">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR THING</p>
+          <h2>Shop by category</h2>
+        </div>
+      </div>
+
+      <div class="category-list" id="category-list">
+        <button class="category-chip active" data-category="all">
+          Everything
+        </button>
+        <button class="category-chip" data-category="beauty">Beauty</button>
+        <button class="category-chip" data-category="fragrances">
+          Fragrance
+        </button>
+        <button class="category-chip" data-category="furniture">
+          Home & living
+        </button>
+        <button class="category-chip" data-category="groceries">
+          Pantry
+        </button>
+        <button class="category-chip" data-category="mens-shirts">
+          Menswear
+        </button>
+        <button class="category-chip" data-category="womens-dresses">
+          Womenswear
+        </button>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading shop-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Things you'll love</h2>
+        </div>
+        <span id="result-count">Loading products...</span>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span>⌕</span>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search products..."
+          />
+        </label>
+
+        <div class="sort-control">
+          <label for="sort-select">Sort by</label>
+          <select id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="active-filter-row">
+        <span id="active-filter-label">Showing everything</span>
+        <button id="clear-filters" hidden>Clear filters ×</button>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        <p>Loading products...</p>
+      </div>
+
+      <div class="load-more-wrap">
+        <button class="secondary-button" id="load-more">
+          Load more products ↓
+        </button>
+      </div>
+
+      <p class="api-note">
+        Product data provided by DummyJSON for demonstration.
+      </p>
+    </section>
+
+    <section class="values-section">
+      <p class="values-mark">f.</p>
+      <div>
+        <p class="eyebrow">A SMALLER, BETTER WAY TO SHOP</p>
+        <h2>Useful things.<br><em>Chosen with care.</em></h2>
+      </div>
+      <p>
+        The best everyday finds don't need to shout.
+        Explore new favourites and keep things simple.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#">forma<span>.</span></a>
+    <p>Good things for everyday life.</p>
+    <span>Demo store · Powered by DummyJSON</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">YOUR PICKS</p>
+        <h2>Your bag <span id="drawer-count">(0)</span></h2>
+      </div>
+      <button id="close-drawer" class="close-drawer" aria-label="Close bag">
+        ×
+      </button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <p class="empty-cart">Your bag is looking a little empty.</p>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">$0.00</strong>
+      </div>
+      <p>Shipping and taxes calculated at checkout.</p>
+      <button class="checkout-button" id="checkout-button">
+        Continue to checkout ↗
+      </button>
+    </div>
+  </aside>
+</body>
+</html>
